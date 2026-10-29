@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --leva-sizes-rootWidth: 340px;
+}
+
+#root {
+  width: 100vw;
+  height: 100vh;
+}
+
+body {
+  margin: 0;
+  background-color: #fce4e8;
+  /* Richer light pink base */
+  background-image: radial-gradient(at 0% 0%, hsla(350, 100%, 88%, 1) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, hsla(330, 100%, 92%, 1) 0px, transparent 50%);
+}
+
+body.greenScreen {
+  background-color: #fce4e8;
+  background-image: none;
+}

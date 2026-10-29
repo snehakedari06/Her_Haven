@@ -1,0 +1,104 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Explicit Classic Light Pink Palette */
+    --background: 350 100% 96%;
+    /* Clearly light pink background */
+    --foreground: 340 60% 25%;
+    /* Deep rose instead of near-black */
+
+    --card: 0 0% 100%;
+    --card-foreground: 340 60% 25%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 340 60% 25%;
+
+    --primary: 350 100% 70%;
+    /* Vibrant but soft pink */
+    --primary-foreground: 350 100% 98%;
+
+    --secondary: 350 100% 90%;
+    /* Visible light pink */
+    --secondary-foreground: 340 70% 40%;
+
+    --muted: 350 100% 94%;
+    --muted-foreground: 340 20% 50%;
+
+    --accent: 330 100% 85%;
+    --accent-foreground: 340 60% 25%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 350 80% 90%;
+    --input: 350 80% 90%;
+    --ring: 350 100% 70%;
+
+    --radius: 1.5rem;
+
+    --chart-1: 350 100% 70%;
+    --chart-2: 330 100% 85%;
+    --chart-3: 10 100% 85%;
+    --chart-4: 350 50% 80%;
+    --chart-5: 350 30% 90%;
+  }
+
+  /* Force light mode variables even if user system is in dark mode for this project */
+  .dark {
+    --background: 350 100% 96%;
+    --foreground: 340 60% 25%;
+    --primary: 350 100% 70%;
+    --primary-foreground: 350 100% 98%;
+    --secondary: 350 100% 90%;
+    --secondary-foreground: 340 70% 40%;
+    --border: 350 80% 90%;
+    --card: 0 0% 100%;
+    --card-foreground: 340 60% 25%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground transition-colors duration-300 antialiased;
+    background-image: radial-gradient(at 0% 0%, hsla(350, 100%, 93%, 1) 0px, transparent 50%),
+      radial-gradient(at 100% 0%, hsla(330, 100%, 95%, 1) 0px, transparent 50%);
+  }
+}
+
+/* Custom Premium Pink Scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: hsl(var(--primary) / 0.3);
+  border-radius: 20px;
+  border: 3px solid transparent;
+  background-clip: content-box;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: hsl(var(--primary));
+}
+
+/* Glassmorphism Utilities - enhanced for Pink */
+.glass-effect {
+  @apply bg-white/40 backdrop-blur-2xl border border-white/50;
+  box-shadow: 0 8px 32px 0 rgba(255, 182, 193, 0.3);
+}
+
+.glass-card {
+  @apply bg-white/60 backdrop-blur-xl border border-white/60;
+  box-shadow: 0 20px 50px rgba(255, 105, 180, 0.1);
+}
